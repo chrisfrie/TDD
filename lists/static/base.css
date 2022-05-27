@@ -1,0 +1,15 @@
+body {
+    background-color: green;
+}
+
+.container {
+    margin-top: 10ex;
+}
+
+#id_new_item {
+    margin-top: 2ex;
+}
+
+.table {
+    color: whitesmoke;
+}
