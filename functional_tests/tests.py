@@ -20,6 +20,7 @@ class NewVisitorTest(LiveServerTestCase):
         start_time = time.time()
         while True:
             try:
+#                import pdb; pdb.set_trace()
                 table = self.browser.find_element_by_id('id_list_table')
                 rows = table.find_elements_by_tag_name('tr')
                 self.assertIn(row_text, [row.text for row in rows])
