@@ -51,5 +51,3 @@ stages:
         testResultsFiles: "**/TEST-*.xml"
         testRunTitle: 'Python $(PYTHON_VERSION)'
       condition: succeededOrFailed()
-
-- stage: Deploy
