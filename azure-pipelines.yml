@@ -60,7 +60,7 @@ stages:
       vmImage: 'ubuntu-latest'
     environment:
       name: cf-tdd-vm
-      resourceType: VirtualMachinev
+      resourceType: VirtualMachine
       tags: lists-app
     strategy:
       runOnce:
