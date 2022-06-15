@@ -59,7 +59,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     environment:
-      name: cf-web-weu-vm1
+      name: cf-tdd-vm
       resourceType: VirtualMachinev
       tags: lists-app
     strategy:
