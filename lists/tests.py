@@ -6,10 +6,14 @@ from lists.views import home_page
 # Create your tests here.
 
 class HomePageTest(TestCase):
+
     def test_uses_home_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
+
+
 class NewListTest(TestCase):
+
     def test_can_save_a_POST_request_to_an_existing_list(self):
         other_list = List.objects.create()
         correct_list = List.objects.create()
@@ -28,6 +32,7 @@ class NewListTest(TestCase):
         response =  self.client.post(f'/lists/{correct_list.id}/add_item', data={'item_text': 'A new item for an existing list'})
         new_list = List.objects.first()
         self.assertRedirects(response, f'/lists/{correct_list.id}/')
+
 
 class ListViewTest(TestCase):
 
@@ -58,7 +63,10 @@ class ListViewTest(TestCase):
 
         response = self.client.get(f'/lists/{correct_list.id}/')
         self.assertEqual(response.context['list'], correct_list)
+
+
 class ListAndItemModelTest(TestCase):
+
     def test_saving_and_retrieving_items(self):
         list_ = List()
         list_.save()
@@ -86,3 +94,4 @@ class ListAndItemModelTest(TestCase):
         self.assertEqual(first_saved_item.list, list_)
         self.assertEqual(second_saved_item.text, 'Second list item')
         self.assertEqual(second_saved_item.list, list_)
+        
